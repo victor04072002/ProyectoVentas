@@ -14,9 +14,7 @@ public class Conexion {
     private final String URL = "jdbc:sqlserver://localhost\\SQLEXPRESS:1450;databaseName=ventas;trustServerCertificate=true";
     private final String USER = "user_db";
     private final String PASSWORD = "Temporal123";
-//    private final String URL = "jdbc:sqlserver://localhost\\SQLEXPRESS:1450;databaseName=ventas;trustServerCertificate=true";
-//    private final String USER = "root";
-//    private final String PASSWORD = "1104";
+
 
     Connection conexion;
 

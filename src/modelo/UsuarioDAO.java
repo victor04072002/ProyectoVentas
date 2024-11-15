@@ -156,7 +156,6 @@ public class UsuarioDAO {
                 return true;
             }
         } catch (SQLException e) {
-            System.out.println(e);
 
         } finally {
             try {
@@ -167,6 +166,33 @@ public class UsuarioDAO {
         }
 
         return false;
+    }
+
+    public int login(String usuario, String contrasena) {
+        try {
+            query = "SELECT usuario, contrasena, estado FROM usuarios WHERE usuario=? AND contrasena=? AND estado<>0;";
+            preparedStatement = conexion.prepareStatement(query);
+            preparedStatement.setString(1, usuario);
+            preparedStatement.setString(2, contrasena);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                if (resultSet.getInt("estado") == 1) {
+                    return 1;
+                } else {
+                    return 2;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                conexion.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return 0;
     }
 
 }
