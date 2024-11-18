@@ -1,4 +1,3 @@
-
 package vistas;
 
 import controlador.ControladorClientes;
@@ -24,7 +23,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-
+    
     private void setCustomIcon() {
         // Cargar el icono desde el archivo .png en la carpeta 'img'
         Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/iconcerdo.png"));
@@ -102,6 +101,12 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         txtClientesEstado = new javax.swing.JTextField();
         txtClientesCorreo = new javax.swing.JTextField();
         btnClientesRegistrar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblClientes = new javax.swing.JTable();
+        btnClientesActualizar = new javax.swing.JButton();
+        btnClientesLimpiar = new javax.swing.JButton();
+        btnClientesEliminar = new javax.swing.JButton();
+        btnClientesActivarDesactivar1 = new javax.swing.JButton();
         nuevaVentaPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -539,7 +544,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         vistasMultiple.addTab("Productos", productosPanel);
 
-        txtClientesId.setEnabled(false);
+        txtClientesId.setEditable(false);
 
         jLabel10.setText("ID");
 
@@ -557,12 +562,63 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         jLabel17.setText("Estado");
 
-        txtClientesEstado.setEnabled(false);
+        txtClientesEstado.setEditable(false);
 
         btnClientesRegistrar.setText("Registrar");
         btnClientesRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClientesRegistrarActionPerformed(evt);
+            }
+        });
+
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "RFC", "Nombre", "Apellido Paterno", "Apellido Materno", "Correo", "Teléfono", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblClientes);
+
+        btnClientesActualizar.setText("Actualizar");
+        btnClientesActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActualizarActionPerformed(evt);
+            }
+        });
+
+        btnClientesLimpiar.setText("Limpiar");
+        btnClientesLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesLimpiarActionPerformed(evt);
+            }
+        });
+
+        btnClientesEliminar.setText("Eliminar");
+        btnClientesEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesEliminarActionPerformed(evt);
+            }
+        });
+
+        btnClientesActivarDesactivar1.setText("Activar/Desactivar");
+        btnClientesActivarDesactivar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActivarDesactivar1ActionPerformed(evt);
             }
         });
 
@@ -573,9 +629,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             .addGroup(contenedorDatosLayout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(contenedorDatosLayout.createSequentialGroup()
-                        .addComponent(btnClientesRegistrar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(contenedorDatosLayout.createSequentialGroup()
                         .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(contenedorDatosLayout.createSequentialGroup()
@@ -610,12 +663,26 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                                 .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtClientesNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtClientesApellidoPaterno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(145, 145, 145))))
+                        .addGap(40, 40, 40))
+                    .addGroup(contenedorDatosLayout.createSequentialGroup()
+                        .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(contenedorDatosLayout.createSequentialGroup()
+                                .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnClientesRegistrar)
+                                    .addComponent(btnClientesLimpiar))
+                                .addGap(18, 18, 18)
+                                .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnClientesActualizar)
+                                    .addComponent(btnClientesActivarDesactivar1)))
+                            .addComponent(btnClientesEliminar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117))
         );
         contenedorDatosLayout.setVerticalGroup(
             contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorDatosLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(107, 107, 107)
                 .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtClientesId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -648,8 +715,20 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(txtClientesEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(btnClientesRegistrar)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClientesRegistrar)
+                    .addComponent(btnClientesActualizar))
+                .addGap(18, 18, 18)
+                .addGroup(contenedorDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClientesLimpiar)
+                    .addComponent(btnClientesActivarDesactivar1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnClientesEliminar)
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(contenedorDatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout clientesPanelLayout = new javax.swing.GroupLayout(clientesPanel);
@@ -659,7 +738,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clientesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(contenedorDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         clientesPanelLayout.setVerticalGroup(
             clientesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -818,11 +897,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_menuBitacorasActionPerformed
 
     private void menuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSalirActionPerformed
-      ControladorSistema.Salir();
+        ControladorSistema.Salir();
     }//GEN-LAST:event_menuSalirActionPerformed
-      
+    
     private void menuCerrarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCerrarSActionPerformed
-      ControladorSistema.cerrarSesion();
+        ControladorSistema.cerrarSesion();
 
     }//GEN-LAST:event_menuCerrarSActionPerformed
 
@@ -843,11 +922,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUsuariosLimpiarActionPerformed
 
     private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
-    ControladorUsuarios.elegirUsuarios(tblUsuarios.rowAtPoint(evt.getPoint()));
+        ControladorUsuarios.elegirUsuarios(tblUsuarios.rowAtPoint(evt.getPoint()));
     }//GEN-LAST:event_tblUsuariosMouseClicked
 
     private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
-    ControladorUsuarios.modificar();
+        ControladorUsuarios.modificar();
     }//GEN-LAST:event_btnUsuariosModificarActionPerformed
 
     private void txtUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosEstadoActionPerformed
@@ -865,6 +944,26 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private void btnClientesRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesRegistrarActionPerformed
         ControladorClientes.registrar();
     }//GEN-LAST:event_btnClientesRegistrarActionPerformed
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        ControladorClientes.elegirClientes(tblClientes.rowAtPoint(evt.getPoint()));
+    }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void btnClientesActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActualizarActionPerformed
+        ControladorClientes.actualizar();
+    }//GEN-LAST:event_btnClientesActualizarActionPerformed
+
+    private void btnClientesLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesLimpiarActionPerformed
+        ControladorClientes.limpiar();
+    }//GEN-LAST:event_btnClientesLimpiarActionPerformed
+
+    private void btnClientesEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesEliminarActionPerformed
+        ControladorClientes.eliminar();
+    }//GEN-LAST:event_btnClientesEliminarActionPerformed
+
+    private void btnClientesActivarDesactivar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActivarDesactivar1ActionPerformed
+        ControladorClientes.activarDesactivar();
+    }//GEN-LAST:event_btnClientesActivarDesactivar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -909,6 +1008,10 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuProductos;
     private javax.swing.JPanel UsuariosPanel;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton btnClientesActivarDesactivar1;
+    private javax.swing.JButton btnClientesActualizar;
+    private javax.swing.JButton btnClientesEliminar;
+    private javax.swing.JButton btnClientesLimpiar;
     private javax.swing.JButton btnClientesRegistrar;
     private javax.swing.JButton btnSistemaBitacora;
     private javax.swing.JButton btnSistemaClientes;
@@ -949,6 +1052,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblSistemaTitulo;
     private javax.swing.JMenuItem menuBitacoras;
     private javax.swing.JMenuItem menuCerrarS;
@@ -957,6 +1061,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuVentas;
     private javax.swing.JPanel nuevaVentaPanel;
     private javax.swing.JPanel productosPanel;
+    private javax.swing.JTable tblClientes;
     private javax.swing.JTable tblUsuarios;
     private javax.swing.JPanel tituloPanel;
     private javax.swing.JTextField txtClientesApellidoMaterno;
@@ -981,77 +1086,81 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     public javax.swing.JTabbedPane getVistasMultiple() {
         return vistasMultiple;
     }
-
+    
     public javax.swing.JTextField getTxtUsuariosApellidoMaterno() {
         return txtUsuariosApellidoMaterno;
     }
-
+    
     public javax.swing.JTextField getTxtUsuariosApellidoPaterno() {
         return txtUsuariosApellidoPaterno;
     }
-
+    
     public javax.swing.JPasswordField getTxtUsuariosContrasena() {
         return txtUsuariosContrasena;
     }
-
+    
     public javax.swing.JTextField getTxtUsuariosId() {
         return txtUsuariosId;
     }
-
+    
     public javax.swing.JTextField getTxtUsuariosNombre() {
         return txtUsuariosNombre;
     }
-
+    
     public javax.swing.JTextField getTxtUsuariosUsuario() {
         return txtUsuariosUsuario;
     }
-
+    
     public javax.swing.JTable getTblUsuarios() {
         return tblUsuarios;
     }
-
+    
     public javax.swing.JButton getBtnUsuariosLimpiar() {
         return btnUsuariosLimpiar;
     }
-
+    
     public javax.swing.JButton getBtnUsuariosRegistrar() {
         return btnUsuariosRegistrar;
     }
-
+    
     public javax.swing.JTextField getTxtUsuariosEstado() {
         return txtUsuariosEstado;
     }
-
+    
     public javax.swing.JTextField getTxtClientesApellidoMaterno() {
         return txtClientesApellidoMaterno;
     }
-
+    
     public javax.swing.JTextField getTxtClientesApellidoPaterno() {
         return txtClientesApellidoPaterno;
     }
-
+    
     public javax.swing.JTextField getTxtClientesCorreo() {
         return txtClientesCorreo;
     }
-
+    
     public javax.swing.JTextField getTxtClientesEstado() {
         return txtClientesEstado;
     }
-
+    
     public javax.swing.JTextField getTxtClientesId() {
         return txtClientesId;
     }
-
+    
     public javax.swing.JTextField getTxtClientesNombre() {
         return txtClientesNombre;
     }
-
+    
     public javax.swing.JTextField getTxtClientesRfc() {
         return txtClientesRfc;
     }
-
+    
     public javax.swing.JTextField getTxtClientesTelefono() {
         return txtClientesTelefono;
     }
-
+    
+    public javax.swing.JTable getTblClientes() {
+        return tblClientes;
+    }
+    
 }
