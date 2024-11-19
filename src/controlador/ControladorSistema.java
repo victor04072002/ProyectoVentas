@@ -49,4 +49,8 @@ public class ControladorSistema {
         System.exit(0);
     }
 
+    public static void iniciarClientes() {
+        ControladorClientes.mostrar();
+    }
+
 }
