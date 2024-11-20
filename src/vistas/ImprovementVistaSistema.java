@@ -91,6 +91,9 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         cbxBitacoraSeccion = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        dateBiInicio = new com.toedter.calendar.JDateChooser();
+        dateBFinal = new com.toedter.calendar.JDateChooser();
+        btmBBuscar = new javax.swing.JButton();
         productosPanel = new javax.swing.JPanel();
         clientesPanel = new javax.swing.JPanel();
         contenedorDatos = new javax.swing.JPanel();
@@ -601,6 +604,13 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Final");
 
+        btmBBuscar.setText("BUSCAR");
+        btmBBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmBBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout btnBitacoraBuscarLayout = new javax.swing.GroupLayout(btnBitacoraBuscar);
         btnBitacoraBuscar.setLayout(btnBitacoraBuscarLayout);
         btnBitacoraBuscarLayout.setHorizontalGroup(
@@ -615,34 +625,52 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel18)))
                 .addGap(6, 6, 6)
-                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(dateBiInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(250, Short.MAX_VALUE))
-            .addComponent(jScrollPane3)
+                        .addGap(14, 14, 14)))
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btmBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
         );
         btnBitacoraBuscarLayout.setVerticalGroup(
             btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel18)
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                            .addComponent(jLabel18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel19)
+                                .addComponent(jLabel20)))
+                        .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel22))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CbxBitacoraAccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CbxBitacoraAccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateBiInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmBBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1099,6 +1127,10 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxBitacoraSeccionActionPerformed
 
+    private void btmBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btmBBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1143,6 +1175,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuProductos;
     private javax.swing.JPanel UsuariosPanel;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton btmBBuscar;
     private javax.swing.JPanel btnBitacoraBuscar;
     private javax.swing.JButton btnClientesActivarDesactivar1;
     private javax.swing.JButton btnClientesActualizar;
@@ -1164,6 +1197,8 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JPanel columaPanel;
     private javax.swing.JPanel containerData;
     private javax.swing.JPanel contenedorDatos;
+    private com.toedter.calendar.JDateChooser dateBFinal;
+    private com.toedter.calendar.JDateChooser dateBiInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
