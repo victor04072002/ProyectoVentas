@@ -110,7 +110,7 @@ public class VistaLogin extends javax.swing.JFrame {
         });
         bg.add(textLoginUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 180, 50));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel2.setText("PASSWORD");
         bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
@@ -124,7 +124,7 @@ public class VistaLogin extends javax.swing.JFrame {
         });
         bg.add(textLoginPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 180, 50));
 
-        jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel3.setText("USER");
         bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
 

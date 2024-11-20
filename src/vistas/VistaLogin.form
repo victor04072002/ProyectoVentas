@@ -148,7 +148,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto Black" size="18" style="0"/>
+              <Font name="Arial Black" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="PASSWORD"/>
           </Properties>
@@ -182,7 +182,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto Black" size="18" style="0"/>
+              <Font name="Arial Black" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="USER"/>
           </Properties>
