@@ -159,11 +159,6 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="bg">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
             <Property name="useNullLayout" type="boolean" value="false"/>
@@ -478,7 +473,7 @@
                 <Container class="javax.swing.JPanel" name="UsuariosPanel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="23" green="5f" red="e2" type="rgb"/>
+                      <Color blue="0" green="0" red="78" type="rgb"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -587,7 +582,7 @@
                     <Container class="javax.swing.JPanel" name="containerData">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="23" green="5f" red="e2" type="rgb"/>
+                          <Color blue="0" green="0" red="78" type="rgb"/>
                         </Property>
                       </Properties>
 
@@ -823,7 +818,7 @@
                         <Component class="javax.swing.JButton" name="btnUsuariosRegistrar">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="78" type="rgb"/>
+                              <Color blue="1f" green="12" red="c1" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="12" style="1"/>
@@ -848,7 +843,7 @@
                         <Component class="javax.swing.JButton" name="btnUsuariosLimpiar">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="78" type="rgb"/>
+                              <Color blue="1f" green="12" red="c1" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="12" style="1"/>
@@ -873,7 +868,7 @@
                         <Component class="javax.swing.JButton" name="btnUsuariosModificar">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="78" type="rgb"/>
+                              <Color blue="1f" green="12" red="c1" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="12" style="1"/>
@@ -906,7 +901,7 @@
                         <Component class="javax.swing.JButton" name="btnUsuariosEstado">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="78" type="rgb"/>
+                              <Color blue="1f" green="12" red="c1" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="12" style="1"/>

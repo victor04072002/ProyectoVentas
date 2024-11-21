@@ -141,7 +141,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         jPanel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
-        bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         columaPanel.setBackground(new java.awt.Color(120, 0, 0));
@@ -313,7 +312,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         vistasMultiple.addTab("Ventas", ventasPanel);
 
-        UsuariosPanel.setBackground(new java.awt.Color(226, 95, 35));
+        UsuariosPanel.setBackground(new java.awt.Color(120, 0, 0));
         UsuariosPanel.setBorder(null);
         UsuariosPanel.setForeground(new java.awt.Color(226, 95, 35));
 
@@ -341,7 +340,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblUsuarios);
 
-        containerData.setBackground(new java.awt.Color(226, 95, 35));
+        containerData.setBackground(new java.awt.Color(120, 0, 0));
 
         txtUsuariosContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -394,7 +393,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Estado");
 
-        btnUsuariosRegistrar.setBackground(new java.awt.Color(120, 0, 0));
+        btnUsuariosRegistrar.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnUsuariosRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosRegistrar.setText("Registrar");
@@ -406,7 +405,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             }
         });
 
-        btnUsuariosLimpiar.setBackground(new java.awt.Color(120, 0, 0));
+        btnUsuariosLimpiar.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnUsuariosLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosLimpiar.setText("Limpiar");
@@ -418,7 +417,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             }
         });
 
-        btnUsuariosModificar.setBackground(new java.awt.Color(120, 0, 0));
+        btnUsuariosModificar.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnUsuariosModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosModificar.setText("Modificar");
@@ -437,7 +436,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             }
         });
 
-        btnUsuariosEstado.setBackground(new java.awt.Color(120, 0, 0));
+        btnUsuariosEstado.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosEstado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnUsuariosEstado.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosEstado.setText("Estado");
@@ -1013,31 +1012,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSistemaBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaBitacoraActionPerformed
-        ControladorSistema.iniciarBitacora();
-    }//GEN-LAST:event_btnSistemaBitacoraActionPerformed
-
-    private void btnSistemaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaProductosActionPerformed
-        ControladorSistema.iniciarProductos();
-    }//GEN-LAST:event_btnSistemaProductosActionPerformed
-
-    private void btnSistemaUsusariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaUsusariosActionPerformed
-        ControladorSistema.iniciarUsuarios();
-    }//GEN-LAST:event_btnSistemaUsusariosActionPerformed
-
-    private void btnSistemaVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaVentasActionPerformed
-        ControladorSistema.iniciarVentas();
-
-    }//GEN-LAST:event_btnSistemaVentasActionPerformed
-
-    private void btnSistemaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaClientesActionPerformed
-        ControladorSistema.iniciarClientes();
-    }//GEN-LAST:event_btnSistemaClientesActionPerformed
-
-    private void btnSistemaNuevaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaNuevaVentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSistemaNuevaVentaActionPerformed
-
     private void MenuProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuProductosActionPerformed
         ControladorSistema.iniciarProductos();
     }//GEN-LAST:event_MenuProductosActionPerformed
@@ -1063,73 +1037,97 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menuCerrarSActionPerformed
 
-    private void txtUsuariosContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosContrasenaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosContrasenaActionPerformed
-
-    private void txtUsuariosIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosIdActionPerformed
-
-    private void btnUsuariosRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosRegistrarActionPerformed
-        ControladorUsuarios.registrar();
-    }//GEN-LAST:event_btnUsuariosRegistrarActionPerformed
-
-    private void btnUsuariosLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosLimpiarActionPerformed
-        ControladorUsuarios.limpiar();
-    }//GEN-LAST:event_btnUsuariosLimpiarActionPerformed
-
-    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
-        ControladorUsuarios.elegirUsuarios(tblUsuarios.rowAtPoint(evt.getPoint()));
-    }//GEN-LAST:event_tblUsuariosMouseClicked
-
-    private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
-        ControladorUsuarios.modificar();
-    }//GEN-LAST:event_btnUsuariosModificarActionPerformed
-
-    private void txtUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosEstadoActionPerformed
-
-    private void txtUsuariosUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosUsuarioActionPerformed
-
-    private void btnUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEstadoActionPerformed
-        ControladorUsuarios.activarDesactivar();
-    }//GEN-LAST:event_btnUsuariosEstadoActionPerformed
-
-    private void btnClientesRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesRegistrarActionPerformed
-        ControladorClientes.registrar();
-    }//GEN-LAST:event_btnClientesRegistrarActionPerformed
-
-    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
-        ControladorClientes.elegirClientes(tblClientes.rowAtPoint(evt.getPoint()));
-    }//GEN-LAST:event_tblClientesMouseClicked
-
-    private void btnClientesActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActualizarActionPerformed
-        ControladorClientes.actualizar();
-    }//GEN-LAST:event_btnClientesActualizarActionPerformed
-
-    private void btnClientesLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesLimpiarActionPerformed
-        ControladorClientes.limpiar();
-    }//GEN-LAST:event_btnClientesLimpiarActionPerformed
+    private void btnClientesActivarDesactivar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActivarDesactivar1ActionPerformed
+        ControladorClientes.activarDesactivar();
+    }//GEN-LAST:event_btnClientesActivarDesactivar1ActionPerformed
 
     private void btnClientesEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesEliminarActionPerformed
         ControladorClientes.eliminar();
     }//GEN-LAST:event_btnClientesEliminarActionPerformed
 
-    private void btnClientesActivarDesactivar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActivarDesactivar1ActionPerformed
-        ControladorClientes.activarDesactivar();
-    }//GEN-LAST:event_btnClientesActivarDesactivar1ActionPerformed
+    private void btnClientesLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesLimpiarActionPerformed
+        ControladorClientes.limpiar();
+    }//GEN-LAST:event_btnClientesLimpiarActionPerformed
+
+    private void btnClientesActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActualizarActionPerformed
+        ControladorClientes.actualizar();
+    }//GEN-LAST:event_btnClientesActualizarActionPerformed
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        ControladorClientes.elegirClientes(tblClientes.rowAtPoint(evt.getPoint()));
+    }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void btnClientesRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesRegistrarActionPerformed
+        ControladorClientes.registrar();
+    }//GEN-LAST:event_btnClientesRegistrarActionPerformed
+
+    private void btmBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btmBBuscarActionPerformed
 
     private void cbxBitacoraSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBitacoraSeccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxBitacoraSeccionActionPerformed
 
-    private void btmBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBBuscarActionPerformed
+    private void btnUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEstadoActionPerformed
+        ControladorUsuarios.activarDesactivar();
+    }//GEN-LAST:event_btnUsuariosEstadoActionPerformed
+
+    private void txtUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosEstadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btmBBuscarActionPerformed
+    }//GEN-LAST:event_txtUsuariosEstadoActionPerformed
+
+    private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
+        ControladorUsuarios.modificar();
+    }//GEN-LAST:event_btnUsuariosModificarActionPerformed
+
+    private void btnUsuariosLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosLimpiarActionPerformed
+        ControladorUsuarios.limpiar();
+    }//GEN-LAST:event_btnUsuariosLimpiarActionPerformed
+
+    private void btnUsuariosRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosRegistrarActionPerformed
+        ControladorUsuarios.registrar();
+    }//GEN-LAST:event_btnUsuariosRegistrarActionPerformed
+
+    private void txtUsuariosUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosUsuarioActionPerformed
+
+    private void txtUsuariosIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosIdActionPerformed
+
+    private void txtUsuariosContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosContrasenaActionPerformed
+
+    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+        ControladorUsuarios.elegirUsuarios(tblUsuarios.rowAtPoint(evt.getPoint()));
+    }//GEN-LAST:event_tblUsuariosMouseClicked
+
+    private void btnSistemaNuevaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaNuevaVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSistemaNuevaVentaActionPerformed
+
+    private void btnSistemaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaClientesActionPerformed
+        ControladorSistema.iniciarClientes();
+    }//GEN-LAST:event_btnSistemaClientesActionPerformed
+
+    private void btnSistemaBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaBitacoraActionPerformed
+        ControladorSistema.iniciarBitacora();
+    }//GEN-LAST:event_btnSistemaBitacoraActionPerformed
+
+    private void btnSistemaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaProductosActionPerformed
+        ControladorSistema.iniciarProductos();
+    }//GEN-LAST:event_btnSistemaProductosActionPerformed
+
+    private void btnSistemaUsusariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaUsusariosActionPerformed
+        ControladorSistema.iniciarUsuarios();
+    }//GEN-LAST:event_btnSistemaUsusariosActionPerformed
+
+    private void btnSistemaVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaVentasActionPerformed
+        ControladorSistema.iniciarVentas();
+    }//GEN-LAST:event_btnSistemaVentasActionPerformed
 
     /**
      * @param args the command line arguments
