@@ -1,5 +1,6 @@
 package vistas;
 
+import controlador.ControladorBitacora;
 import controlador.ControladorClientes;
 import controlador.ControladorSistema;
 import controlador.ControladorUsuarios;
@@ -12,6 +13,8 @@ import javax.swing.WindowConstants;
  * @author VICTOR
  */
 public class ImprovementVistaSistema extends javax.swing.JFrame {
+
+    public boolean CbxBitacoraAccio;
 
     /**
      * Creates new form VistaSistema
@@ -586,7 +589,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Seccion");
 
-        CbxBitacoraAccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CbxBitacoraAccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbxBitacoraAccionActionPerformed(evt);
+            }
+        });
 
         cbxBitacoraSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxBitacoraSeccion.addActionListener(new java.awt.event.ActionListener() {
@@ -640,11 +647,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
-                        .addComponent(btmBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btmBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
         );
         btnBitacoraBuscarLayout.setVerticalGroup(
@@ -1062,7 +1069,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesRegistrarActionPerformed
 
     private void btmBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBBuscarActionPerformed
-        // TODO add your handling code here:
+  ControladorBitacora.buscar();
     }//GEN-LAST:event_btmBBuscarActionPerformed
 
     private void cbxBitacoraSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBitacoraSeccionActionPerformed
@@ -1128,6 +1135,14 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private void btnSistemaVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaVentasActionPerformed
         ControladorSistema.iniciarVentas();
     }//GEN-LAST:event_btnSistemaVentasActionPerformed
+
+    private void CbxBitacoraAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxBitacoraAccionActionPerformed
+
+    }//GEN-LAST:event_CbxBitacoraAccionActionPerformed
+
+    public boolean isCbxBitacoraAccio() {
+        return CbxBitacoraAccio;
+    }
 
     /**
      * @param args the command line arguments
@@ -1338,6 +1353,10 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     
     public javax.swing.JTable getTblClientes() {
         return tblClientes;
+    }
+
+    public javax.swing.JComboBox<String> getCbxBitacoraAccion() {
+        return CbxBitacoraAccion;
     }
     
 }
