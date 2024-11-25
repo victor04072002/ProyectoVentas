@@ -316,7 +316,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         vistasMultiple.addTab("Ventas", ventasPanel);
 
         UsuariosPanel.setBackground(new java.awt.Color(120, 0, 0));
-        UsuariosPanel.setBorder(null);
         UsuariosPanel.setForeground(new java.awt.Color(226, 95, 35));
 
         tblUsuarios.setForeground(new java.awt.Color(51, 51, 51));
@@ -595,7 +594,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             }
         });
 
-        cbxBitacoraSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxBitacoraSeccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxBitacoraSeccionActionPerformed(evt);
@@ -1357,6 +1355,10 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
     public javax.swing.JComboBox<String> getCbxBitacoraAccion() {
         return CbxBitacoraAccion;
+    }
+
+    public javax.swing.JComboBox<String> getCbxBitacoraSeccion() {
+        return cbxBitacoraSeccion;
     }
     
 }

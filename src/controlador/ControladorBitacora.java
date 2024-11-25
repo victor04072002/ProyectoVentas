@@ -15,18 +15,25 @@ public class ControladorBitacora {
     }
 
     public static void buscar() {
-     
 
     }
-    public static void llenarListas(){
-        if (vista.getCbxBitacoraAccion().getItemCount()==0) {
+
+    public static void llenarListas() {
+        if (vista.getCbxBitacoraAccion().getItemCount() == 0) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-            List<String> listado= new BitacoraDAO().getListadoAcciones();
+            List<String> listado = new BitacoraDAO().getListadoAcciones();
             for (int i = 0; i < listado.size(); i++) {
                 modelo.addElement(listado.get(i));
             }
             vista.getCbxBitacoraAccion().setModel(modelo);
         }
-
+        if (vista.getCbxBitacoraSeccion().getItemCount() == 0) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            List<String> listado = new BitacoraDAO().getListadoSecciones();
+            for (int i = 0; i < listado.size(); i++) {
+                modelo.addElement(listado.get(i));
+            }
+            vista.getCbxBitacoraSeccion().setModel(modelo);
+        }
     }
 }

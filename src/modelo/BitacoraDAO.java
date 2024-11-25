@@ -41,5 +41,33 @@ public class BitacoraDAO {
         return listado;
  
     }
+    
+     public List getListadoSecciones() {
+        List<String> listado = new ArrayList();
+        listado.add("Todas");
+         
+        try {
+            conexion= new Conexion().getConection();
+            String query="SELECT id, seccion FROM bitacora_secciones;";
+            preparedStatement=conexion.prepareStatement(query);
+            resultSet=preparedStatement.executeQuery();
+            while (resultSet.next()) {
+           listado.add(resultSet.getString(2));
+            }
+            
+        } catch (SQLException e) {
+            System.err.println(e);
+        }finally{
+            try {
+                resultSet.close();
+                preparedStatement.close();
+            } catch (Exception e) {
+            }
+    
+    
+    }
+        return listado;
+ 
+    }
 
 }
