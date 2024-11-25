@@ -1,5 +1,6 @@
 package vistas;
 
+import controlador.ControladorBitacora;
 import controlador.ControladorClientes;
 import controlador.ControladorSistema;
 import controlador.ControladorUsuarios;
@@ -12,6 +13,8 @@ import javax.swing.WindowConstants;
  * @author VICTOR
  */
 public class ImprovementVistaSistema extends javax.swing.JFrame {
+
+    public boolean CbxBitacoraAccio;
 
     /**
      * Creates new form VistaSistema
@@ -81,6 +84,19 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         txtUsuariosEstado = new javax.swing.JTextField();
         btnUsuariosEstado = new javax.swing.JButton();
         BitacoraPanel = new javax.swing.JPanel();
+        btnBitacoraBuscar = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        CbxBitacoraAccion = new javax.swing.JComboBox<>();
+        cbxBitacoraSeccion = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        dateBiInicio = new com.toedter.calendar.JDateChooser();
+        dateBFinal = new com.toedter.calendar.JDateChooser();
+        btmBBuscar = new javax.swing.JButton();
         productosPanel = new javax.swing.JPanel();
         clientesPanel = new javax.swing.JPanel();
         contenedorDatos = new javax.swing.JPanel();
@@ -128,7 +144,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         jPanel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
-        bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         columaPanel.setBackground(new java.awt.Color(120, 0, 0));
@@ -300,6 +315,10 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         vistasMultiple.addTab("Ventas", ventasPanel);
 
+        UsuariosPanel.setBackground(new java.awt.Color(120, 0, 0));
+        UsuariosPanel.setForeground(new java.awt.Color(226, 95, 35));
+
+        tblUsuarios.setForeground(new java.awt.Color(51, 51, 51));
         tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -323,7 +342,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblUsuarios);
 
-        containerData.setBackground(new java.awt.Color(255, 255, 255));
+        containerData.setBackground(new java.awt.Color(120, 0, 0));
 
         txtUsuariosContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,9 +351,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("USUARIOS");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ID");
 
         txtUsuariosId.setEditable(false);
@@ -345,15 +366,19 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Apellido paterno");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Usuario");
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Apellido materno");
 
         txtUsuariosUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -363,29 +388,43 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Contraseña");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Estado");
 
+        btnUsuariosRegistrar.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUsuariosRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosRegistrar.setText("Registrar");
+        btnUsuariosRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnUsuariosRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuariosRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosRegistrarActionPerformed(evt);
             }
         });
 
+        btnUsuariosLimpiar.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUsuariosLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosLimpiar.setText("Limpiar");
+        btnUsuariosLimpiar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnUsuariosLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuariosLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosLimpiarActionPerformed(evt);
             }
         });
 
+        btnUsuariosModificar.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUsuariosModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosModificar.setText("Modificar");
+        btnUsuariosModificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnUsuariosModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuariosModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosModificarActionPerformed(evt);
@@ -399,8 +438,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
             }
         });
 
+        btnUsuariosEstado.setBackground(new java.awt.Color(193, 18, 31));
         btnUsuariosEstado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUsuariosEstado.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuariosEstado.setText("Estado");
+        btnUsuariosEstado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnUsuariosEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuariosEstadoActionPerformed(evt);
@@ -433,7 +475,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                                 .addComponent(txtUsuariosContrasena, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtUsuariosUsuario)
                                 .addComponent(txtUsuariosApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel2)
                     .addGroup(containerDataLayout.createSequentialGroup()
                         .addGroup(containerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(containerDataLayout.createSequentialGroup()
@@ -445,7 +486,11 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addComponent(btnUsuariosModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(2, 2, 2)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerDataLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(27, 27, 27))
         );
         containerDataLayout.setVerticalGroup(
             containerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,7 +529,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                         .addGroup(containerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtUsuariosEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(containerDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnUsuariosLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnUsuariosRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -500,33 +545,150 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         UsuariosPanelLayout.setHorizontalGroup(
             UsuariosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UsuariosPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(containerData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addComponent(containerData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         UsuariosPanelLayout.setVerticalGroup(
             UsuariosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(UsuariosPanelLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(UsuariosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(containerData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+            .addComponent(containerData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UsuariosPanelLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         vistasMultiple.addTab("Usuarios", UsuariosPanel);
+
+        btnBitacoraBuscar.setBackground(new java.awt.Color(120, 0, 0));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        jLabel18.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("BITACORA");
+
+        jLabel19.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Accion");
+
+        jLabel20.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("Seccion");
+
+        CbxBitacoraAccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbxBitacoraAccionActionPerformed(evt);
+            }
+        });
+
+        cbxBitacoraSeccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxBitacoraSeccionActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Inicio");
+
+        jLabel23.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Final");
+
+        btmBBuscar.setText("BUSCAR");
+        btmBBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmBBuscarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnBitacoraBuscarLayout = new javax.swing.GroupLayout(btnBitacoraBuscar);
+        btnBitacoraBuscar.setLayout(btnBitacoraBuscarLayout);
+        btnBitacoraBuscarLayout.setHorizontalGroup(
+            btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CbxBitacoraAccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel18)))
+                .addGap(6, 6, 6)
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(dateBiInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btmBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(60, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
+        );
+        btnBitacoraBuscarLayout.setVerticalGroup(
+            btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
+                            .addComponent(jLabel18)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel19)
+                                .addComponent(jLabel20)))
+                        .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CbxBitacoraAccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateBiInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmBBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout BitacoraPanelLayout = new javax.swing.GroupLayout(BitacoraPanel);
         BitacoraPanel.setLayout(BitacoraPanelLayout);
         BitacoraPanelLayout.setHorizontalGroup(
             BitacoraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BitacoraPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnBitacoraBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         BitacoraPanelLayout.setVerticalGroup(
             BitacoraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 605, Short.MAX_VALUE)
+            .addComponent(btnBitacoraBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         vistasMultiple.addTab("Bitácora", BitacoraPanel);
@@ -855,31 +1017,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSistemaBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaBitacoraActionPerformed
-        ControladorSistema.iniciarBitacora();
-    }//GEN-LAST:event_btnSistemaBitacoraActionPerformed
-
-    private void btnSistemaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaProductosActionPerformed
-        ControladorSistema.iniciarProductos();
-    }//GEN-LAST:event_btnSistemaProductosActionPerformed
-
-    private void btnSistemaUsusariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaUsusariosActionPerformed
-        ControladorSistema.iniciarUsuarios();
-    }//GEN-LAST:event_btnSistemaUsusariosActionPerformed
-
-    private void btnSistemaVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaVentasActionPerformed
-        ControladorSistema.iniciarVentas();
-
-    }//GEN-LAST:event_btnSistemaVentasActionPerformed
-
-    private void btnSistemaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaClientesActionPerformed
-        ControladorSistema.iniciarClientes();
-    }//GEN-LAST:event_btnSistemaClientesActionPerformed
-
-    private void btnSistemaNuevaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaNuevaVentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSistemaNuevaVentaActionPerformed
-
     private void MenuProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuProductosActionPerformed
         ControladorSistema.iniciarProductos();
     }//GEN-LAST:event_MenuProductosActionPerformed
@@ -905,65 +1042,105 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menuCerrarSActionPerformed
 
-    private void txtUsuariosContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosContrasenaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosContrasenaActionPerformed
-
-    private void txtUsuariosIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosIdActionPerformed
-
-    private void btnUsuariosRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosRegistrarActionPerformed
-        ControladorUsuarios.registrar();
-    }//GEN-LAST:event_btnUsuariosRegistrarActionPerformed
-
-    private void btnUsuariosLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosLimpiarActionPerformed
-        ControladorUsuarios.limpiar();
-    }//GEN-LAST:event_btnUsuariosLimpiarActionPerformed
-
-    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
-        ControladorUsuarios.elegirUsuarios(tblUsuarios.rowAtPoint(evt.getPoint()));
-    }//GEN-LAST:event_tblUsuariosMouseClicked
-
-    private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
-        ControladorUsuarios.modificar();
-    }//GEN-LAST:event_btnUsuariosModificarActionPerformed
-
-    private void txtUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosEstadoActionPerformed
-
-    private void txtUsuariosUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuariosUsuarioActionPerformed
-
-    private void btnUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEstadoActionPerformed
-        ControladorUsuarios.activarDesactivar();
-    }//GEN-LAST:event_btnUsuariosEstadoActionPerformed
-
-    private void btnClientesRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesRegistrarActionPerformed
-        ControladorClientes.registrar();
-    }//GEN-LAST:event_btnClientesRegistrarActionPerformed
-
-    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
-        ControladorClientes.elegirClientes(tblClientes.rowAtPoint(evt.getPoint()));
-    }//GEN-LAST:event_tblClientesMouseClicked
-
-    private void btnClientesActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActualizarActionPerformed
-        ControladorClientes.actualizar();
-    }//GEN-LAST:event_btnClientesActualizarActionPerformed
-
-    private void btnClientesLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesLimpiarActionPerformed
-        ControladorClientes.limpiar();
-    }//GEN-LAST:event_btnClientesLimpiarActionPerformed
+    private void btnClientesActivarDesactivar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActivarDesactivar1ActionPerformed
+        ControladorClientes.activarDesactivar();
+    }//GEN-LAST:event_btnClientesActivarDesactivar1ActionPerformed
 
     private void btnClientesEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesEliminarActionPerformed
         ControladorClientes.eliminar();
     }//GEN-LAST:event_btnClientesEliminarActionPerformed
 
-    private void btnClientesActivarDesactivar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActivarDesactivar1ActionPerformed
-        ControladorClientes.activarDesactivar();
-    }//GEN-LAST:event_btnClientesActivarDesactivar1ActionPerformed
+    private void btnClientesLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesLimpiarActionPerformed
+        ControladorClientes.limpiar();
+    }//GEN-LAST:event_btnClientesLimpiarActionPerformed
+
+    private void btnClientesActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActualizarActionPerformed
+        ControladorClientes.actualizar();
+    }//GEN-LAST:event_btnClientesActualizarActionPerformed
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        ControladorClientes.elegirClientes(tblClientes.rowAtPoint(evt.getPoint()));
+    }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void btnClientesRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesRegistrarActionPerformed
+        ControladorClientes.registrar();
+    }//GEN-LAST:event_btnClientesRegistrarActionPerformed
+
+    private void btmBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBBuscarActionPerformed
+  ControladorBitacora.buscar();
+    }//GEN-LAST:event_btmBBuscarActionPerformed
+
+    private void cbxBitacoraSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBitacoraSeccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxBitacoraSeccionActionPerformed
+
+    private void btnUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosEstadoActionPerformed
+        ControladorUsuarios.activarDesactivar();
+    }//GEN-LAST:event_btnUsuariosEstadoActionPerformed
+
+    private void txtUsuariosEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosEstadoActionPerformed
+
+    private void btnUsuariosModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosModificarActionPerformed
+        ControladorUsuarios.modificar();
+    }//GEN-LAST:event_btnUsuariosModificarActionPerformed
+
+    private void btnUsuariosLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosLimpiarActionPerformed
+        ControladorUsuarios.limpiar();
+    }//GEN-LAST:event_btnUsuariosLimpiarActionPerformed
+
+    private void btnUsuariosRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosRegistrarActionPerformed
+        ControladorUsuarios.registrar();
+    }//GEN-LAST:event_btnUsuariosRegistrarActionPerformed
+
+    private void txtUsuariosUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosUsuarioActionPerformed
+
+    private void txtUsuariosIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosIdActionPerformed
+
+    private void txtUsuariosContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuariosContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuariosContrasenaActionPerformed
+
+    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+        ControladorUsuarios.elegirUsuarios(tblUsuarios.rowAtPoint(evt.getPoint()));
+    }//GEN-LAST:event_tblUsuariosMouseClicked
+
+    private void btnSistemaNuevaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaNuevaVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSistemaNuevaVentaActionPerformed
+
+    private void btnSistemaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaClientesActionPerformed
+        ControladorSistema.iniciarClientes();
+    }//GEN-LAST:event_btnSistemaClientesActionPerformed
+
+    private void btnSistemaBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaBitacoraActionPerformed
+        ControladorSistema.iniciarBitacora();
+    }//GEN-LAST:event_btnSistemaBitacoraActionPerformed
+
+    private void btnSistemaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaProductosActionPerformed
+        ControladorSistema.iniciarProductos();
+    }//GEN-LAST:event_btnSistemaProductosActionPerformed
+
+    private void btnSistemaUsusariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaUsusariosActionPerformed
+        ControladorSistema.iniciarUsuarios();
+    }//GEN-LAST:event_btnSistemaUsusariosActionPerformed
+
+    private void btnSistemaVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSistemaVentasActionPerformed
+        ControladorSistema.iniciarVentas();
+    }//GEN-LAST:event_btnSistemaVentasActionPerformed
+
+    private void CbxBitacoraAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxBitacoraAccionActionPerformed
+
+    }//GEN-LAST:event_CbxBitacoraAccionActionPerformed
+
+    public boolean isCbxBitacoraAccio() {
+        return CbxBitacoraAccio;
+    }
 
     /**
      * @param args the command line arguments
@@ -1004,10 +1181,13 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BitacoraPanel;
+    private javax.swing.JComboBox<String> CbxBitacoraAccion;
     private javax.swing.JLabel LOGO;
     private javax.swing.JMenuItem MenuProductos;
     private javax.swing.JPanel UsuariosPanel;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton btmBBuscar;
+    private javax.swing.JPanel btnBitacoraBuscar;
     private javax.swing.JButton btnClientesActivarDesactivar1;
     private javax.swing.JButton btnClientesActualizar;
     private javax.swing.JButton btnClientesEliminar;
@@ -1023,10 +1203,13 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JButton btnUsuariosLimpiar;
     private javax.swing.JButton btnUsuariosModificar;
     private javax.swing.JButton btnUsuariosRegistrar;
+    private javax.swing.JComboBox<String> cbxBitacoraSeccion;
     private javax.swing.JPanel clientesPanel;
     private javax.swing.JPanel columaPanel;
     private javax.swing.JPanel containerData;
     private javax.swing.JPanel contenedorDatos;
+    private com.toedter.calendar.JDateChooser dateBFinal;
+    private com.toedter.calendar.JDateChooser dateBiInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1036,7 +1219,12 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1053,6 +1241,8 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblSistemaTitulo;
     private javax.swing.JMenuItem menuBitacoras;
     private javax.swing.JMenuItem menuCerrarS;
@@ -1161,6 +1351,14 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     
     public javax.swing.JTable getTblClientes() {
         return tblClientes;
+    }
+
+    public javax.swing.JComboBox<String> getCbxBitacoraAccion() {
+        return CbxBitacoraAccion;
+    }
+
+    public javax.swing.JComboBox<String> getCbxBitacoraSeccion() {
+        return cbxBitacoraSeccion;
     }
     
 }
