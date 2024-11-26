@@ -6,8 +6,11 @@ public class Bitacora {
 
     private int id;
     private int idUsuario;
+    private String usuario;
     private int idAccion;
+    private String accion;
     private int idSeccion;
+    private String seccion;
     private Timestamp hora;
 
     public Bitacora() {
@@ -59,6 +62,30 @@ public class Bitacora {
 
     public void setHora(Timestamp hora) {
         this.hora = hora;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getAccion() {
+        return accion;
+    }
+
+    public void setAccion(String accion) {
+        this.accion = accion;
+    }
+
+    public String getSeccion() {
+        return seccion;
+    }
+
+    public void setSeccion(String seccion) {
+        this.seccion = seccion;
     }
 
 }

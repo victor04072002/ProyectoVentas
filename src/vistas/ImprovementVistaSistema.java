@@ -86,7 +86,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         BitacoraPanel = new javax.swing.JPanel();
         btnBitacoraBuscar = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblBitacoraRegistros = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -94,8 +94,8 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
         cbxBitacoraSeccion = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        dateBiInicio = new com.toedter.calendar.JDateChooser();
-        dateBFinal = new com.toedter.calendar.JDateChooser();
+        dateBitacoraInicio = new com.toedter.calendar.JDateChooser();
+        dateBitacoraFinal = new com.toedter.calendar.JDateChooser();
         btmBBuscar = new javax.swing.JButton();
         productosPanel = new javax.swing.JPanel();
         clientesPanel = new javax.swing.JPanel();
@@ -563,18 +563,23 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         btnBitacoraBuscar.setBackground(new java.awt.Color(120, 0, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblBitacoraRegistros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Hora", "Usuario", "Acción", "Sección"
             }
-        ));
-        jScrollPane3.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(tblBitacoraRegistros);
 
         jLabel18.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -633,7 +638,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                     .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
                         .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(dateBiInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateBitacoraInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -643,7 +648,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                 .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dateBitacoraFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(btmBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(btnBitacoraBuscarLayout.createSequentialGroup()
@@ -671,8 +676,8 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
                     .addGroup(btnBitacoraBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(CbxBitacoraAccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cbxBitacoraSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(dateBiInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateBFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateBitacoraInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateBitacoraFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btmBBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1208,8 +1213,8 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JPanel columaPanel;
     private javax.swing.JPanel containerData;
     private javax.swing.JPanel contenedorDatos;
-    private com.toedter.calendar.JDateChooser dateBFinal;
-    private com.toedter.calendar.JDateChooser dateBiInicio;
+    private com.toedter.calendar.JDateChooser dateBitacoraFinal;
+    private com.toedter.calendar.JDateChooser dateBitacoraInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1242,7 +1247,6 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblSistemaTitulo;
     private javax.swing.JMenuItem menuBitacoras;
     private javax.swing.JMenuItem menuCerrarS;
@@ -1251,6 +1255,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuVentas;
     private javax.swing.JPanel nuevaVentaPanel;
     private javax.swing.JPanel productosPanel;
+    private javax.swing.JTable tblBitacoraRegistros;
     private javax.swing.JTable tblClientes;
     private javax.swing.JTable tblUsuarios;
     private javax.swing.JPanel tituloPanel;
@@ -1359,6 +1364,18 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
     public javax.swing.JComboBox<String> getCbxBitacoraSeccion() {
         return cbxBitacoraSeccion;
+    }
+
+    public com.toedter.calendar.JDateChooser getDateBitacoraFinal() {
+        return dateBitacoraFinal;
+    }
+
+    public com.toedter.calendar.JDateChooser getDateBitacoraInicio() {
+        return dateBitacoraInicio;
+    }
+
+    public javax.swing.JTable getTblBitacoraRegistros() {
+        return tblBitacoraRegistros;
     }
     
 }
