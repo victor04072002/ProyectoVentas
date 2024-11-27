@@ -7,6 +7,7 @@ package vistas;
 import controlador.ControladorLogin;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -122,6 +123,11 @@ public class VistaLogin extends javax.swing.JFrame {
                 textLoginPasswordActionPerformed(evt);
             }
         });
+        textLoginPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                textLoginPasswordKeyPressed(evt);
+            }
+        });
         bg.add(textLoginPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 180, 50));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -168,6 +174,12 @@ public class VistaLogin extends javax.swing.JFrame {
     private void textLoginUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textLoginUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textLoginUsernameActionPerformed
+
+    private void textLoginPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textLoginPasswordKeyPressed
+        if(KeyEvent.VK_ENTER==evt.getKeyCode()){
+            ControladorLogin.login();
+        }
+    }//GEN-LAST:event_textLoginPasswordKeyPressed
 
     /**
      * @param args the command line arguments
