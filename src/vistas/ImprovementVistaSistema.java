@@ -570,15 +570,20 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
 
         tblBitacoraRegistros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Fecha", "Usuario", "Acción", "Sección"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(tblBitacoraRegistros);
 
         jLabel18.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -1035,7 +1040,7 @@ public class ImprovementVistaSistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesRegistrarActionPerformed
 
     private void btmBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBBuscarActionPerformed
-  ControladorBitacora.buscar();
+  ControladorBitacora.llenarTablaRegistros();
     }//GEN-LAST:event_btmBBuscarActionPerformed
 
     private void cbxBitacoraSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBitacoraSeccionActionPerformed

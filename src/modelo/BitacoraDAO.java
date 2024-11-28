@@ -1,5 +1,6 @@
 package modelo;
 
+import java.security.Timestamp;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -68,20 +69,45 @@ public class BitacoraDAO {
 
     }
 
-    public ArrayList<Bitacora> getRegistros() {
+    public ArrayList<Bitacora> getRegistros(String fechaInicio,
+            String fechaFinal, int idAccion, int idSeccion) {
+
         var registros = new ArrayList<Bitacora>();
 
         try {
             conexion = new Conexion().getConection();
-            query = "SELECT b.hora, u.usuario, "
+            StringBuilder sql = new StringBuilder("SELECT b.hora, u.usuario, "
                     + "a.accion, "
                     + "s.seccion "
                     + "FROM bitacora AS b "
                     + "JOIN usuarios AS u ON u.id = b.id_usuario "
                     + "JOIN bitacora_acciones AS a ON a.id = b.id_accion "
                     + "JOIN bitacora_secciones AS s ON s.id = b.id_seccion "
-                    + "WHERE b.estado = 1;";
-            preparedStatement = conexion.prepareStatement(query);
+                    + "WHERE b.estado = 1 "
+                    + "and b.hora >= ? "
+                    + "and b.hora <= ?");
+
+            if (idAccion != 0) {
+                sql.append(" and a.id = ?");
+            }
+            if (idSeccion != 0) {
+                sql.append(" and s.id = ?");
+            }
+            //Añadir el punto y coma a la instrucción sql
+            sql.append(";");
+
+            preparedStatement = conexion.prepareStatement(sql.toString());
+            preparedStatement.setString(1, fechaInicio);
+            preparedStatement.setString(2, fechaFinal);
+            int indice = 3;
+            if (idAccion != 0) {
+                preparedStatement.setInt(indice, idAccion);
+                indice++;
+            }
+            if (idSeccion != 0) {
+                preparedStatement.setInt(indice, idSeccion);
+                indice++;
+            }
             resultSet = preparedStatement.executeQuery();
 
             Bitacora registro;
