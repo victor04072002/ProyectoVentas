@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UsuarioDAO {
 
@@ -56,7 +59,7 @@ public class UsuarioDAO {
             preparedStatement.setString(2, usuario.getApellidoPaterno());
             preparedStatement.setString(3, usuario.getApellidoMaterno());
             preparedStatement.setString(4, usuario.getUsuario());
-            preparedStatement.setString(5, usuario.getContrasena());
+            preparedStatement.setString(5, getMd5(usuario.getContrasena()));
             var numRegistrosAfectados = preparedStatement.executeUpdate();
 
             if (numRegistrosAfectados > 0) {
@@ -173,7 +176,7 @@ public class UsuarioDAO {
             query = "SELECT usuario, contrasena, estado FROM usuarios WHERE usuario=? AND contrasena=? AND estado<>0;";
             preparedStatement = conexion.prepareStatement(query);
             preparedStatement.setString(1, usuario);
-            preparedStatement.setString(2, contrasena);
+            preparedStatement.setString(2, getMd5(contrasena));
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -193,6 +196,22 @@ public class UsuarioDAO {
             }
         }
         return 0;
+    }
+
+    public static String getMd5(String contrasena) {
+        try {
+            MessageDigest m = MessageDigest.getInstance("MD5");
+            byte[] digest = m.digest(contrasena.getBytes());
+            BigInteger bigInt = new BigInteger(1, digest);
+            String encriptado = bigInt.toString(16);
+            while (encriptado.length() < 32) {
+                encriptado = "0" + encriptado;
+            }
+            return encriptado;
+        } catch (NoSuchAlgorithmException ex) {
+            System.out.println(ex);
+        }
+        return "";
     }
 
 }
